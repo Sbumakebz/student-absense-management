@@ -1,0 +1,14 @@
+<header>
+  <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+  <div><a href="https://www.google.co.za" class="navbar-brand">Student Absense Management</a></div>
+  
+  <ul class="navbar-nav">
+     
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/" class="nav-link">View Students</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addstudent" class="nav-link">Add New Student</a></li>
+    <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+  
+  </ul>
+    </nav>
+</header>

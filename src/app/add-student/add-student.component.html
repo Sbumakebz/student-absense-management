@@ -1,0 +1,32 @@
+<div class="col-md-6">
+<h2 class="text-center">Add Student</h2>
+<form>
+	<div class="form-group">
+		<label for="fullName">Name:</label>
+		<input type="name" [(ngModel)]="studentAbsense.fullName" placeholder="Name" name="fullName" class="form-control" id="fullName">
+	</div>
+	<div class="form-group">
+		<label for="gradeName">Grade:</label>
+		<input type="name" [(ngModel)]="studentAbsense.gradeName" placeholder="Grade" name="gradeName" class="form-control" id="gradeName">
+	</div>
+	<div class="form-group">
+		<label for="className">Class:</label>
+		<input type="name" [(ngModel)]="studentAbsense.className" placeholder="Grade" name="className" class="form-control" id="className">
+	</div>
+	<!-- <div class="form-group">
+		<label for="grade">Class:</label>
+		<mat-form-field>
+            <input matInput
+                   [matDatepicker]="dateTime"
+                   placeholder="Date"                       
+                   [(ngModel)]="studentAbsense.dateTime"
+                   name="start_date" required>
+            <mat-datepicker-toggle matSuffix [for]="dateTime"></mat-datepicker-toggle>
+            <mat-datepicker #dateTime></mat-datepicker>
+            <mat-error>This field is required!</mat-error>
+        </mat-form-field>
+	</div>-->
+	
+	<button class="btn btn-success" (click)="createStudentAbsense()">Create</button>
+</form>
+</div>

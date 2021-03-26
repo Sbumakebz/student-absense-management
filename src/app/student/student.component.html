@@ -1,0 +1,70 @@
+<h2 class="text-center">Filter Student Absense</h2>
+<br/>
+<form>
+	<table border="1" class="table table-striped">
+		<tbody>
+			<tr>
+				<td>
+					<table border="1" class="table table-striped">
+						<tbody>
+							<tr>
+								<td><label for="fullName">Name:</label></td>
+								<td><input type="name" [(ngModel)]="searchstudentabsense.fullName" placeholder="Name" name="searchFullName" class="form-control" id="searchFullName"></td>
+								<td><button mat-fab class="btn btn-danger" (click) = "getStudentsAbsensesByName()"></button></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+				<td>
+					<table border="1" class="table table-striped">
+						<tbody>
+							<tr>
+								<td><label for="className">Class:</label></td>
+								<td><input type="name" [(ngModel)]="searchstudentabsense.className" placeholder="Name" name="searchClassName" class="form-control" id="searchClassName"></td>
+								<td><button mat-fab class="btn btn-danger" (click) = "getStudentsAbsensesByClass()"></button></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+				<td>
+					<table border="1" class="table table-striped">
+						<tbody>
+							<tr>
+								<td><label for="gradeName">Grade:</label></td>
+								<td><input type="name" [(ngModel)]="searchstudentabsense.gradeName" placeholder="Name" name="searchGradeName" class="form-control" id="searchGradeName"></td>
+								<td><button mat-fab class="btn btn-danger" (click) = "getStudentsAbsensesByGrade()"></button></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+<br/>
+<table border="1" class="table table-striped">
+  <thead>
+	<tr>
+		<th>Name</th>
+		<th>Class</th>
+		<th>Grade</th>
+		<th>Presense</th>
+		<th>Date Time</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let studentabsense of studentsabsenses">
+          <td>{{studentabsense.fullName}}</td>
+		  <td>{{studentabsense.className}}</td>
+		  <td>{{studentabsense.gradeName}}</td>
+		  <td><input type="checkbox" [(ngModel)]="studentabsense.isPresent" name="presense" class="form-control" id="presense"></td>
+		  <td>{{studentabsense.dateTime}}</td>
+		  <td><button mat-fab class="btn btn-danger" (click) = "deleteStudentAbsense(studentabsense)"> <mat-icon>delete</mat-icon></button></td>
+      </tr>
+  </tbody>
+</table>
+ <p>
+  Total rows: {{ totalRows }} <br>
+  Present Records: {{ presentRecords }} <br>
+  Absent Records: {{ absentRecords }}
+</p>
